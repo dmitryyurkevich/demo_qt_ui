@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ecdis
+  labels:
+    app: ecdis-x11-rabbitmq
+    type: ecdis
+spec:
+  containers:
+  - name: rabbit
+    image: rabbitmq
+  - name: xvfb4
+    image: comiq/xvfb:latest
+    env:
+    - name: DISPLAY
+      value: "1"
+    - name: SCREEN
+      value: "0"           
+  - name: ecdis
+    image: artifacts.enav.net:5000/kt/kt-ecdis:v2
+    env:
+    - name: DISPLAY
+      value: "localhost:1"
+    - name: LIBGL_DEBUG
+      value: "verbose"    
+    ports:
+    - containerPort: 9517
+    

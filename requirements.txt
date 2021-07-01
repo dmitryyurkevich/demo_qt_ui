@@ -1,0 +1,10 @@
+beautifulsoup4==4.9.3
+numpy==1.19.5
+Pillow~=8.2.0
+pytest==6.2.1
+selenium==3.141.0
+validators==0.18.2
+pytesseract~=0.3.7
+opencv-python~=4.5.2.52
+PyAutoGUI~=0.9.52
+imutils~=0.5.4
